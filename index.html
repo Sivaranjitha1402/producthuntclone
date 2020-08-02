@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8" />
+        <title>Product Hunt - The best new products in tech</title>
+        <link rel="shortcut icon" href="img/inde.png">
+        <link rel="stylesheet"  href="index.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script>
+            function creatediv()
+            {
+                var name = document.getElementById("name").value;
+                var dsc=document.getElementById("dsc").value;
+                var subs=document.getElementById("subs").value;
+                var img=document.getElementById("Image").value;
+                var element="";
+                element=
+                        `<div class="product left"  style="background-color: #fff; margin-right: 20px; margin-bottom: 15px;">
+                            <a class="link1" style="text-decoration: none;" href="">
+                             <table>
+                                 <tr>
+                                     <td><img src="`+img+`" alt="Compilance radar" style="width:80px;height:80px"></td>
+                                     <td> <div class="font_9d927 lineHeight_042f1" style="line-height: 32px; font-size:20px; color: #000000;">`+name+`</div>
+                                         <span class="font_9d927 grey_bbe43" style="-webkit-box-flex:1; font-weight:400; font-size:13px; color: #6f6f6f;">`+dsc+`</span>
+                                         <div class="subscribertag">
+                                             <div class="subsinfo">
+                                                 <a>
+                                                     <div style="display:grid; grid-template-columns: auto auto auto auto; justify-content: left; margin-top:-15spx">
+                                                         <div>
+                                                             <img class="subimg" src="today1.jpeg" style="width:24px; height:24px; border-radius: 50%;">
+                                                         </div>
+                                                         <div>
+                                                             <img class="subimg" src="today2.jpeg" style="width:24px; height:24px; border-radius: 50%;">
+                                                         </div>
+                                                         <div>
+                                                                 <img class="subimg" src="today3.jpeg" style="width:24px; height:24px; border-radius: 50%;">
+                                                         </div>
+                                                         <div><span class=" font_9d927 lineHeight_042f1" style="-webkit-box-flex:1; font-weight:400; font-size:13px; color: #6f6f6f; padding : 20px 20px; "> `+ subs+` subscribers</span></div>
+                                                     </div>
+                                                 </a>
+                                             </div>
+                                             <button  class=" font_9d927 "style="float:right; margin-top:-30px ;margin-left:550px;font-weight:550;font-size:12px; border:none; background-color: #fff;"> SUBSCRIBE</button>
+                                         </div>
+                                     </td>
+                                 </tr>
+                            </table>
+                        </a>
+                     </div>`
+                    var post=document.getElementsByClassName('product');
+                    var get=post[0];
+                    get.insertAdjacentHTML("beforebegin",element);
+            }
+        </script>
+        <script>
+
+         function upvote(x)
+            {
+                var vote=document.getElementsByClassName("upvote")[x].innerHTML;
+                vote++;
+                document.getElementsByClassName("upvote")[x].innerHTML=vote;
+                document.getElementsByClassName("upvotebtn")[x].disabled = true;            
+            }
+
+
+        </script>
+
+    </head>
+    <body class = "env-production">
+        <div  class= " header"style="background-color: #fff;height: 50px;">
+                <div class= "font_9d927 constraintWidth_c5ad2 content_c7d40 contain" style="">
+                        <div>
+                                <a class="logo" href="https://www.producthunt.com/" style="margin-top: -25px;">
+                                    <img src="img/inde.png" alt="LOGO" width="40" height="40/">
+                                </a>
+                        </div>
+                        <div>
+                                <span class="search" style="margin-top: -20px; margin-left:5px;" >
+                                    <svg width="15" height="20" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M9.383 10.347a5.796 5.796 0 1 1 .965-.964L15 14.036l-.964.964-4.653-4.653zm-3.588-.12a4.432 4.432 0 1 0 0-8.863 4.432 4.432 0 0 0 0 8.863z" fill="#BBB" fill-rule="evenodd"></path>
+                                    </svg>
+                                </span>
+                        </div>
+                        <div  style=" border-block-color: none; outline: none;">
+                                <input autocomplete="off" class="input_277cf" name="q" placeholder="&nbsp Discover your next favorite thing…" value="">
+                        </div>
+                       
+                        <div class="topnav txt">
+                                <a href="" style="color:rgb(36, 34, 34)">Deals</a>
+                        </div>
+                        <div class="topnav txt">
+                                <a href="" style="color:rgb(36, 34, 34)">Makers</a>
+                        </div>
+                        <div class="topnav txt">
+                                <a href="" style="color:rgb(36, 34, 34)">Radio</a>
+                        </div>
+                        <div class="topnav txt">
+                                <a href="" style="color:rgb(36, 34, 34)">Ship</a>
+                        </div>
+                        <div class="topnav">
+                                <a href="">
+                                    <span class="icon_ff6de">
+                                        <svg width="20" height="4" viewBox="0 0 20 4" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M2 4A2 2 0 1 0 2.001.001 2 2 0 0 0 2 4zm8 0a2 2 0 1 0 .001-3.999A2 2 0 0 0 10 4zm8 0a2 2 0 1 0 .001-3.999A2 2 0 0 0 18 4z" fill="#BBB" fill-rule="evenodd"></path>
+                                    </svg>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="topnav">
+                                <a href="">Post</a>
+                        </div>
+                        <div class="topnav">
+                            <a><img src ="img/noti.png" alt="NOTIFICATION" height="20" width="20"></a>
+                        </div>
+                        <div class="topnav">
+                                <a class="profile"><img src ="img/photo.gif" alt="NOTIFICATION" height="40" width="40"></a>
+                        </div>
+                    </div>
+        </div>
+           <div class ="grid-container" style="margin-left: -35px;" >
+            <div>
+                <div class ="maincontent  font_9d927" style="padding-bottom: 20px ;" >
+                            <span style="font-weight: 600; font-size: 20px; margin-left: -5px ;">Upcoming</span>
+                            <span style="font-size: 13px; text-decoration-color: dimgrey;">powered by Ship</span>
+                            <button type="button" id="myBtn" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Add Product</button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="myModal" role="dialog">
+                                <div class="modal-dialog">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <b><h4 style="margin-left:150px;">Enter the necessary details</h4></b>
+                                            <label>Product Name</label>
+                                            <input autocomplete="off" id="name" placeholder="Product Name" value="" class="in"><br/><br/>
+                                            <label>Description&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+                                            <input autocomplete="off" id="dsc" placeholder="Description" value="" class="in"><br/><br/>
+                                            <label>Subscribers&nbsp&nbsp&nbsp&nbsp</label>
+                                            <input autocomplete="off" id="subs" placeholder="Subscribers" value="" class="in"><br/><br/>
+                                            <label>Image&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+                                            <input autocomplete="off" id="Image" placeholder="Image URL" value="" class="in"><br/><br/><br/>
+                                            <center><button type="submit" onclick="creatediv()" value="submit">Submit</button></center>
+                                                
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+      
+                                    </div>
+                            </div>
+       
+                 </div>
+                <div  class="font_9d927 text left">
+                        <span>Follow and support your future favorite products.</span>
+                </div>
+                <div class="product left"  style="background-color: #fff; margin-right: 20px; margin-bottom: 15px;">
+                        <a class="link1" style="text-decoration: none;" href="">
+                             <table>
+                                 <tr>
+                                     <td><img src="img/product1.gif" alt="Compilance radar" style="width:80px;height:80px"></td>
+                                     <td> <div class="font_9d927 lineHeight_042f1" style="line-height: 32px; font-size:20px; color: #000000;"> Compilance Radar</div>
+                                         <span class="font_9d927 grey_bbe43" style="-webkit-box-flex:1; font-weight:400; font-size:13px; color: #6f6f6f;">Track the compliance of +10,000 cloud services</span>
+                                         <div class="subscribertag">
+                                             <div class="subsinfo">
+                                                 <a>
+                                                     <div style="display:grid; grid-template-columns: auto auto auto auto; justify-content: left; margin-top:-15spx">
+                                                         <div>
+                                                             <img class="subimg" src="img/today1.jpeg" style="width:24px; height:24px; border-radius: 50%;">
+                                                         </div>
+                                                         <div>
+                                                             <img class="subimg" src="img/today2.jpeg" style="width:24px; height:24px; border-radius: 50%;">
+                                                         </div>
+                                                         <div>
+                                                                 <img class="subimg" src="img/today3.jpeg" style="width:24px; height:24px; border-radius: 50%;">
+                                                         </div>
+                                                         <div><span class=" font_9d927 lineHeight_042f1" style="-webkit-box-flex:1; font-weight:400; font-size:13px; color: #6f6f6f; padding : 20px 20px; "> 339 subscribers</span></div>
+                                                     </div>
+                                                 </a>
+                                             </div>
+                                             <button  class=" font_9d927 "style="float:right; margin-top:-30px ;margin-left:550px;font-weight:550;font-size:12px; border:none; background-color: #fff;"> SUBSCRIBE</button>
+                                         </div>
+                                     </td>
+                                 </tr>
+                            </table>
+                        </a>
+                </div>
+                <div class="product left"  style="margin-top:-10px;background-color: #fff; margin-right: 20px;">
+                        <a class="link1" style="text-decoration: none;" href="">
+                             <table>
+                                 <tr>
+                                     <td><img src="img/product2.jpeg" alt="Popped" style="width:80px;height:80px"></td>
+                                     <td> <div class="font_9d927 product" > Popped</div>
+                                         <span class="font_9d927 subpro">Write the screenplay similar to texting </span>
+                                         <div class="subscribertag">
+                                             <div class="subsinfo">
+                                                 <a>
+                                                     <div style="display:grid; grid-template-columns: auto auto auto auto; justify-content: left;">
+                                                         <div>
+                                                             <img class="subimg" src="img/today1.jpeg" style="width:24px; height:24px; border-radius: 50%;">
+                                                         </div>
+                                                         <div>
+                                                             <img class="subimg" src="img/today2.jpeg" style="width:24px; height:24px; border-radius: 50%;">
+                                                         </div>
+                                                         <div>
+                                                                 <img class="subimg" src="img/today3.jpeg" style="width:24px; height:24px; border-radius: 50%;">
+                                                         </div>
+                                                         <div><span class=" font_9d927 lineHeight_042f1" style="-webkit-box-flex:1; font-weight:400; font-size:13px; color: #6f6f6f; padding : 20px 20px; "> 247 subscribers</span></div>
+                                                     </div>
+                                                 </a>
+                                             </div>
+                                             <button  class=" font_9d927 lineHeight_042f1"style="float:right; margin-top:-30px ;margin-left:550px;font-size:12px; border:none; background-color: #fff; font-weight:600"> SUBSCRIBE</button>
+                                         </div>
+                                     </td>
+                                 </tr>
+                            </table>
+                        </a>
+                    </div>
+                    <div class="product left"  style="margin-top:5px;background-color: #fff; margin-right: 20px;">
+                            <a class="link1" style="text-decoration: none;" href="">
+                                 <table>
+                                     <tr>
+                                         <td><img src= "img/product2.gif" alt="Facemaze" style="width:80px;height:80px"></td>
+                                         <td> <div class="font_9d927 lineHeight_042f1" style="line-height: 32px; font-size:20px; color: #000000;"> Facemaze</div>
+                                             <span class="font_9d927 grey_bbe43" style="-webkit-box-flex:1; font-weight:400; font-size:13px; color: #6f6f6f;">Free web interface for accurate face detection </span>
+                                             <div class="subscribertag">
+                                                 <div class="subsinfo">
+                                                     <a>
+                                                         <div style="display:grid; grid-template-columns: auto auto auto auto; justify-content: left;">
+                                                             <div>
+                                                                 <img class="subimg" src="img/today1.jpeg" style="width:24px; height:24px; border-radius: 50%;">
+                                                             </div>
+                                                             <div>
+                                                                 <img class="subimg" src="img/today2.jpeg" style="width:24px; height:24px; border-radius: 50%;">
+                                                             </div>
+                                                             <div>
+                                                                     <img class="subimg" src="img/today3.jpeg" style="width:24px; height:24px; border-radius: 50%;">
+                                                             </div>
+                                                             <div><span class=" font_9d927 lineHeight_042f1" style="-webkit-box-flex:1; font-weight:400; font-size:13px; color: #6f6f6f; padding : 20px 20px; "> 209 subscribers</span></div>
+                                                         </div>
+                                                     </a>
+                                                 </div>
+                                                 <button  class=" font_9d927 lineHeight_042f1"style="float:right; margin-top:-30px ;margin-left:550px;font-size:12px; border:none; background-color: #fff;font-weight:550;"> SUBSCRIBE</button>
+                                             </div>
+                                         </td>
+                                     </tr>
+                                </table>
+                            </a>
+                        </div>
+                        <div class = " left font_9d927" style="margin-top:10px ; background-color: #fff; margin-right:20px; height:60px; padding:5px">
+                                <a  style="float:left; font-size: 11px; padding: 20px;color: #cc4d29;"> VIEW ALL PROJECTS</a>
+                                <span style="float:right;padding:20px; font-size: 12px;"> Working On Something?<span style="color: #cc4d29;">Discover ship </span></span>
+                        </div>
+                        <div class =" left maincontent  font_9d927" style=" padding: 30px; height: 50px;" >
+                                <span style="font-weight: 600; font-size: 20px; margin-left: -25px ;">Today</span>
+                                <span style="font-size: 12px; text-decoration-color: dimgrey; float:right">POPULAR &nbsp NEWEST</span>
+                        </div>
+                        <div class=" left product1"  style="margin-top:-35px;background-color: #fff; margin-right: 20px;">
+                                <a class="link1" style="text-decoration: none;">
+                                     <table>
+                                         <tr>
+                                             <td><img src= "img/to1.jpeg" alt="Biolinky" style="width:80px;height:80px"></td>
+                                             <td> <div class="font_9d927 lineHeight_042f1" style="line-height: 32px; font-size:20px; color: #000000;"> BioLinky</div>
+                                                 <span class="font_9d927 grey_bbe43" style="-webkit-box-flex:1; font-weight:400; font-size:13px; color: #6f6f6f;">Yet another link tool? Yeah.. But better, and totally free!</span><br/><br/>
+                                                 <div class="subscribertag">
+                                                     <div class="subsinfo">
+                                                         <a>
+                                                            <button style="border: none; margin-left: 20px; background-color: #fff;">
+                                                                <img src="img/comment.png" alt ="comment" style="height: 10px; width: 10px;">
+                                                                <a>19</a>
+                                                            </button>
+                                                                 <span class=" font_9d927" style="-webkit-box-flex:1; font-weight:400; font-size:13px; color: #6f6f6f; padding : 20px;">Productivity</span>
+                                                        </a>
+                                                     </div>
+                                                     <button  class="upvotebtn font_9d927"style="float:right; margin-top:-65px ;margin-left:575px;font-size:13px; height:50px;width:40px;border:none; background-color: #fff;" onclick="upvote(0)"> 
+                                                    <img src="img/tri1.png"  style=" height:10px;width:10px;"><br/>
+                                                    <a class="upvote">213</a>
+                                                    </button>
+                                                 </div>
+                                             </td>
+                                         </tr>
+                                    </table>
+                                </a>
+                            </div>
+                            <div class="product1 left "  style="margin-top:8px;background-color: #fff; margin-right: 20px;">
+                                    <a class="link1" style="text-decoration: none;">
+                                         <table>
+                                             <tr>
+                                                 <td><img src= "img/to2.jpeg" alt="Freelancify" style="width:80px;height:80px"></td>
+                                                 <td> <div class="font_9d927 lineHeight_042f1" style="line-height: 32px; font-size:20px; color: #000000;">Freelancify</div>
+                                                     <span class="font_9d927 grey_bbe43" style="-webkit-box-flex:1; font-weight:400; font-size:13px; color: #6f6f6f;">Self-Management for freelancers</span><br/><br/>
+                                                     <div class="subscribertag">
+                                                        <div class="subsinfo">
+                                                            <a>
+                                                               <button style="border: none; margin-left: 20px; background-color: #fff;">
+                                                                   <img src="img/comment.png" alt ="comment" style="height: 10px; width: 10px;">
+                                                                   <a>19</a>
+                                                               </button>
+                                                                    <span class=" font_9d927" style="-webkit-box-flex:1; font-weight:400; font-size:13px; color: #6f6f6f; padding : 20px;">Productivity</span>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                        <button  class="upvotebtn font_9d927"style="float:right; margin-top:-65px ;margin-left:575px;font-size:13px; height:50px;width:40px;border:none; background-color: #fff;"onclick="upvote(1)"> 
+                                                                <img src="img/tri1.png" alt =" " style=" height:10px;width:10px;"><br/>
+                                                                <a class="upvote">86   </a>
+                                                        </button>
+                                                    </div>
+                                                 </td>
+                                             </tr>
+                                        </table>
+                                    </a>
+                                </div>
+                                <div class=" left product1"  style="margin-top:8px;background-color: #fff; margin-right: 20px; height:90px">
+                                        <a class="link1" style="text-decoration: none;">
+                                             <table>
+                                                 <tr>
+                                                     <td><img src= "img/to3.jpeg" alt="PayRequest" style="width:80px;height:80px"></td>
+                                                     <td> <div class="font_9d927 lineHeight_042f1" style="line-height: 32px; font-size:20px; color: #000000;"> PayRequest</div>
+                                                         <span class="font_9d927 grey_bbe43" style="-webkit-box-flex:1; font-weight:400; font-size:13px; color: #6f6f6f;">Simple, fast payment links via Stripe and Mollie</span><br/><br/>
+                                                         <div class="subscribertag">
+                                                            <div class="subsinfo">
+                                                                <a>
+                                                                   <button style="border: none; margin-left: 20px; background-color: #fff;">
+                                                                       <img src="img/comment.png" alt ="comment" style="height: 10px; width: 10px;">
+                                                                       <a>19</a>
+                                                                   </button>
+                                                                        <span class=" font_9d927 lineHeight_042f1" style="-webkit-box-flex:1; font-weight:400; font-size:13px; color: #6f6f6f; padding : 20px;">Productivity</span>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                            <button  class=" upvotebtn font_9d927 lineHeight_042f1" onclick=" upvote(2)"style="float:right; margin-top:-65px ;margin-left:575px;font-size:13px; height:50px;width:40px;border:none; background-color: #fff;"> 
+                                                                    <img src="img/tri1.png" alt =" " style=" height:10px;width:10px;"><br/>
+                                                                    <a class="upvote">106</a>
+                                                            </button>
+                                                            </div>
+                                                     </td>
+                                                 </tr>
+                                            </table>
+                                        </a>
+                                    </div>
+                                    <div class=" left product1"  style="background-color: #fff; margin-right: 20px;height:100px;">
+                                            <a class="link1" style="text-decoration: none;">
+                                                 <table>
+                                                     <tr>
+                                                         <td><img src= "img/to3.gif" alt="Lemonade" style="width:80px;height:80px;"></td>
+                                                         <td> <div class="font_9d927 lineHeight_042f1" style="line-height: 32px; font-size:20px; color: #000000;"> Lemonade</div>
+                                                             <span class="font_9d927 grey_bbe43" style="-webkit-box-flex:1; font-weight:400; font-size:13px; color: #6f6f6f;">Forget everything you know about insurance </span><br/><br/>
+                                                             <div class="subscribertag">
+                                                                <div class="subsinfo">
+                                                                    <a>
+                                                                       <button style="border: none; margin-left: 20px; background-color: #fff;">
+                                                                           <img src="img/comment.png" alt ="comment" style="height: 10px; width: 10px;">
+                                                                           <a>19</a>
+                                                                       </button>
+                                                                            <span class=" font_9d927 lineHeight_042f1" style="-webkit-box-flex:1; font-weight:400; font-size:13px; color: #6f6f6f; padding : 20px;">Productivity</span>
+                                                                        </div>
+                                                                    </a>
+                                                                </div>
+                                                                <button  class=" font_9d927 lineHeight_042f1 upvotebtn"onclick="upvote(3)" style="float:right; margin-top:-65px ;margin-left:575px;font-size:13px; height:50px;width:40px;border:none; background-color: #fff;"> 
+                                                                        <img src="img/tri1.png" alt =" " style=" height:10px;width:10px;"><br/>
+                                                                        <a class="upvote">106</a>
+                                                                </button>
+                                                                </div>
+                                                         </td>
+                                                     </tr>
+                                                </table>
+                                            </a>
+                                        </div>
+                                        <div class="product1 left "  style="background-color: #fff; margin-right: 20px;height:100px;">
+                                                <a class="link1" style="text-decoration: none;">
+                                                     <table>
+                                                         <tr>
+                                                             <td><img src= "img/to4.png" alt="Pine" style="width:80px;height:80px;"></td>
+                                                             <td> <div class="font_9d927 lineHeight_042f1" style="line-height: 32px; font-size:20px; color: #000000;"> Pine</div>
+                                                                 <span class="font_9d927 grey_bbe43" style="-webkit-box-flex:1; font-weight:400; font-size:13px; color: #6f6f6f;">Your personal journal.Everywhere.</span><br/><br/>
+                                                                 <div class="subscribertag">
+                                                                    <div class="subsinfo">
+                                                                        <a>
+                                                                           <button style="border: none; margin-left: 20px; background-color: #fff;">
+                                                                               <img src="img/comment.png" alt ="comment" style="height: 10px; width: 10px;">
+                                                                               <a>59</a>
+                                                                           </button>
+                                                                                <span class=" font_9d927 lineHeight_042f1" style="-webkit-box-flex:1; font-weight:400; font-size:13px; color: #6f6f6f; padding : 20px;">Web App</span>
+                                                                            </div>
+                                                                        </a>
+                                                                    </div>
+                                                                    <button  class="upvotebtn font_9d927 lineHeight_042f1" onclick="upvote(4)" style="float:right; margin-top:-65px ;margin-left:575px;font-size:13px; height:50px;width:40px;border:none; background-color: #fff;"> 
+                                                                            <img src="img/tri1.png" alt =" " style=" height:10px;width:10px;"><br/>
+                                                                            <a class="upvote">309</a>
+                                                                    </button>
+                                                                    </div>
+                                                             </td>
+                                                         </tr>
+                                                    </table>
+                                                </a>
+                                            </div>
+                                             
+                                    <div class="left " style="background-color: #fff; height:25px;width:705px;padding: 10px 15px 10px 10px;box-sizing:content-box;">
+                                            <span style="margin-left: 300px;">
+                                                <svg width="12" height="7" viewBox="0 0 12 7">
+                                                    <path d="M5.998 6.244a.99.99 0 0 1-.703-.292L1.048 1.705A1.003 1.003 0 0 1 1.05.293.996.996 0 0 1 2.462.29L6 3.83 9.538.29a1.003 1.003 0 0 1 1.412.003.997.997 0 0 1 .002 1.412L6.705 5.952a.992.992 0 0 1-.702.29z" fill="#CCC8C7"></path>
+                                                </svg> <a href="" class="link"> &nbsp&nbsp&nbspShow <!-- -->8<!-- --> more</a>
+                                            </span>
+                                    </div>       
+                                    <div class =" left maincontent  font_9d927" style=" padding: 30px; height: 50px;" >
+                                        <span style="font-weight: 600; font-size: 20px; margin-left: -25px ;">Yesterday</span>
+                                        <span style="font-size: 12px; text-decoration-color: dimgrey; float:right">POPULAR &nbsp NEWEST</span>
+                                </div>
+                                <div class=" left product1"  style="background-color: #fff; margin-right: 20px;">
+                                        <a class="link1" style="text-decoration: none;" >
+                                             <table>
+                                                 <tr>
+                                                     <td><img src= "img/to1.jpeg" alt="Biolinky" style="width:80px;height:80px"></td>
+                                                     <td> <div class="font_9d927 lineHeight_042f1" style="line-height: 32px; font-size:20px; color: #000000;"> BioLinky</div>
+                                                         <span class="font_9d927 grey_bbe43" style="-webkit-box-flex:1; font-weight:400; font-size:13px; color: #6f6f6f;">Yet another link tool? Yeah.. But better, and totally free!</span><br/><br/>
+                                                         <div class="subscribertag">
+                                                             <div class="subsinfo">
+                                                                 <a>
+                                                                    <button style="border: none; margin-left: 20px; background-color: #fff;">
+                                                                        <img src="img/comment.png" alt ="comment" style="height: 10px; width: 10px;">
+                                                                        <a>19</a>
+                                                                    </button>
+                                                                         <span class=" font_9d927" style="-webkit-box-flex:1; font-weight:400; font-size:13px; color: #6f6f6f; padding : 20px;">Productivity</span>
+                                                                </a>
+                                                             </div>
+                                                             <button  class=" upvotebtn font_9d927" onclick="upvote(5)" style="float:right; margin-top:-65px ;margin-left:575px;font-size:13px; height:50px;width:40px;border:none; background-color: #fff;"> 
+                                                            <img src="img/tri1.png" alt =" " style=" height:10px;width:10px;"><br/>
+                                                            <a class="upvote">213</a>
+                                                            </button>
+                                                         </div>
+                                                     </td>
+                                                 </tr>
+                                            </table>
+                                        </a>
+                                    </div>
+                                    <div class="product1 left "  style="margin-top:8px;background-color: #fff; margin-right: 20px;">
+                                            <a class="link1" style="text-decoration: none;">
+                                                 <table>
+                                                     <tr>
+                                                         <td><img src= "img/to2.jpeg" alt="Freelancify" style="width:80px;height:80px"></td>
+                                                         <td> <div class="font_9d927 lineHeight_042f1" style="line-height: 32px; font-size:20px; color: #000000;">Freelancify</div>
+                                                             <span class="font_9d927 grey_bbe43" style="-webkit-box-flex:1; font-weight:400; font-size:13px; color: #6f6f6f;">Self-Management for freelancers</span><br/><br/>
+                                                             <div class="subscribertag">
+                                                                <div class="subsinfo">
+                                                                    <a>
+                                                                       <button style="border: none; margin-left: 20px; background-color: #fff;">
+                                                                           <img src="img/comment.png" alt ="comment" style="height: 10px; width: 10px;">
+                                                                           <a>19</a>
+                                                                       </button>
+                                                                            <span class=" font_9d927" style="-webkit-box-flex:1; font-weight:400; font-size:13px; color: #6f6f6f; padding : 20px;">Productivity</span>
+                                                                        </div>
+                                                                    </a>
+                                                                </div>
+                                                                <button  class=" upvotebtn font_9d927" onclick="upvote(6)" style="float:right; margin-top:-65px ;margin-left:575px;font-size:13px; height:50px;width:40px;border:none; background-color: #fff;"> 
+                                                                        <img src="img/tri1.png" alt =" " style=" height:10px;width:10px;"><br/>
+                                                                        <a class="upvote">86   </a>
+                                                                </button>
+                                                            </div>
+                                                         </td>
+                                                     </tr>
+                                                </table>
+                                            </a>
+                                        </div>
+                                        <div class=" left product1"  style="margin-top:8px;background-color: #fff; margin-right: 20px; height:90px">
+                                                <a class="link1" style="text-decoration: none;" >
+                                                     <table>
+                                                         <tr>
+                                                             <td><img src= "img/to3.jpeg" alt="PayRequest" style="width:80px;height:80px"></td>
+                                                             <td> <div class="font_9d927 lineHeight_042f1" style="line-height: 32px; font-size:20px; color: #000000;"> PayRequest</div>
+                                                                 <span class="font_9d927 grey_bbe43" style="-webkit-box-flex:1; font-weight:400; font-size:13px; color: #6f6f6f;">Simple, fast payment links via Stripe and Mollie</span><br/><br/>
+                                                                 <div class="subscribertag">
+                                                                    <div class="subsinfo">
+                                                                        <a>
+                                                                           <button style="border: none; margin-left: 20px; background-color: #fff;">
+                                                                               <img src="img/comment.png" alt ="comment" style="height: 10px; width: 10px;">
+                                                                               <a>19</a>
+                                                                           </button>
+                                                                                <span class=" font_9d927 lineHeight_042f1" style="-webkit-box-flex:1; font-weight:400; font-size:13px; color: #6f6f6f; padding : 20px;">Productivity</span>
+                                                                            </div>
+                                                                        </a>
+                                                                    </div>
+                                                                    <button  class=" upvotebtn font_9d927 lineHeight_042f1" onclick="upvote(7)" style="float:right; margin-top:-65px ;margin-left:575px;font-size:13px; height:50px;width:40px;border:none; background-color: #fff;"> 
+                                                                            <img src="img/tri1.png" alt =" " style=" height:10px;width:10px;"><br/>
+                                                                            <a class="upvote">106</a>
+                                                                    </button>
+                                                                    </div>
+                                                             </td>
+                                                         </tr>
+                                                    </table>
+                                                </a>
+                                            </div>
+                                            <div class=" left product1"  style="background-color: #fff; margin-right: 20px;height:100px;">
+                                                    <a class="link" >
+                                                         <table>
+                                                             <tr>
+                                                                 <td><img src= "img/to3.gif" alt="Lemonade" style="width:80px;height:80px;"></td>
+                                                                 <td> <div class="font_9d927 lineHeight_042f1" style="line-height: 32px; font-size:20px; color: #000000;"> Lemonade</div>
+                                                                     <span class="font_9d927 grey_bbe43" style="-webkit-box-flex:1; font-weight:400; font-size:13px; color: #6f6f6f;">Forget everything you know about insurance </span><br/><br/>
+                                                                     <div class="subscribertag">
+                                                                        <div class="subsinfo">
+                                                                            <a>
+                                                                               <button style="border: none; margin-left: 20px; background-color: #fff;">
+                                                                                   <img src="img/comment.png" alt ="comment" style="height: 10px; width: 10px;">
+                                                                                   <a>19</a>
+                                                                               </button>
+                                                                                    <span class=" font_9d927 lineHeight_042f1" style="-webkit-box-flex:1; font-weight:400; font-size:13px; color: #6f6f6f; padding : 20px;">Productivity</span>
+                                                                                </div>
+                                                                            </a>
+                                                                        </div>
+                                                                        <button  class=" upvotebtn font_9d927 lineHeight_042f1"  onclick="upvote(8)" style="float:right; margin-top:-65px ;margin-left:575px;font-size:13px; height:50px;width:40px;border:none; background-color: #fff;"> 
+                                                                                <img src="img/tri1.png" alt =" " style=" height:10px;width:10px;"><br/>
+                                                                                <a class="upvote">106</a>
+                                                                        </button>
+                                                                        </div>
+                                                                 </td>
+                                                             </tr>
+                                                        </table>
+                                                    </a>
+                                                </div>
+                                                <div class="product1 left "  style="background-color: #fff; margin-right: 20px;height:100px;">
+                                                        <a class="link1" style="text-decoration: none;" >
+                                                             <table>
+                                                                 <tr>
+                                                                     <td><img src= "img/to4.png" alt="Pine" style="width:80px;height:80px;"></td>
+                                                                     <td> <div class="font_9d927 lineHeight_042f1" style="line-height: 32px; font-size:20px; color: #000000;"> Pine</div>
+                                                                         <span class="font_9d927 grey_bbe43" style="-webkit-box-flex:1; font-weight:400; font-size:13px; color: #6f6f6f;">Your personal journal.Everywhere.</span><br/><br/>
+                                                                         <div class="subscribertag">
+                                                                            <div class="subsinfo">
+                                                                                <a>
+                                                                                   <button style="border: none; margin-left: 20px; background-color: #fff;">
+                                                                                       <img src="img/comment.png" alt ="comment" style="height: 10px; width: 10px;">
+                                                                                       <a>59</a>
+                                                                                   </button>
+                                                                                        <span class=" font_9d927 lineHeight_042f1" style="-webkit-box-flex:1; font-weight:400; font-size:13px; color: #6f6f6f; padding : 20px;">Web App</span>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </div>
+                                                                            <button  class=" upvotebtn font_9d927 lineHeight_042f1" onclick="upvote(9)" style="float:right; margin-top:-65px ;margin-left:575px;font-size:13px; height:50px;width:40px;border:none; background-color: #fff;"> 
+                                                                                    <img src="img/tri1.png" alt =" " style=" height:10px;width:10px;"><br/>
+                                                                                    <a class="upvote">309</a>
+                                                                            </button>
+                                                                            </div>
+                                                                     </td>
+                                                                 </tr>
+                                                            </table>
+                                                        </a>
+                                                    </div>
+                                                     
+                                            <div class="left show ">
+                                                    <span style="margin-left: 300px;">
+                                                        <svg width="12" height="7" viewBox="0 0 12 7">
+                                                            <path d="M5.998 6.244a.99.99 0 0 1-.703-.292L1.048 1.705A1.003 1.003 0 0 1 1.05.293.996.996 0 0 1 2.462.29L6 3.83 9.538.29a1.003 1.003 0 0 1 1.412.003.997.997 0 0 1 .002 1.412L6.705 5.952a.992.992 0 0 1-.702.29z" fill="#CCC8C7"></path>
+                                                        </svg> <a href="" class="link"> &nbsp&nbsp&nbspShow <!-- -->8<!-- --> more</a>
+                                                    </span>
+                                            </div>       
+                                            <div class =" left maincontent  font_9d927" style=" padding: 30px; height: 50px;" >
+                                                <span style="font-weight: 600; font-size: 20px; margin-left: -25px ;">Monday</span>
+                                    
+                                        </div>
+                                        <div class=" left product1"  style="margin-top:5px;background-color: #fff; margin-right: 20px;">
+                                                <a class="link1" style="text-decoration: none;" >
+                                                     <table>
+                                                         <tr>
+                                                             <td><img src= "img/to1.jpeg" alt="Biolinky" style="width:80px;height:80px"></td>
+                                                             <td> <div class="font_9d927 lineHeight_042f1" style="line-height: 32px; font-size:20px; color: #000000;"> BioLinky</div>
+                                                                 <span class="font_9d927 grey_bbe43" style="-webkit-box-flex:1; font-weight:400; font-size:13px; color: #6f6f6f;">Yet another link tool? Yeah.. But better, and totally free!</span><br/><br/>
+                                                                 <div class="subscribertag">
+                                                                     <div class="subsinfo">
+                                                                         <a>
+                                                                            <button style="border: none; margin-left: 20px; background-color: #fff;">
+                                                                                <img src="img/comment.png" alt ="comment" style="height: 10px; width: 10px;">
+                                                                                <a>19</a>
+                                                                            </button>
+                                                                                 <span class=" font_9d927" style="-webkit-box-flex:1; font-weight:400; font-size:13px; color: #6f6f6f; padding : 20px;">Productivity</span>
+                                                                        </a>
+                                                                     </div>
+                                                                     <button  class="upvotebtn font_9d927" onclick="upvote(10)" style="float:right; margin-top:-65px ;margin-left:575px;font-size:13px; height:50px;width:40px;border:none; background-color: #fff;"> 
+                                                                    <img src="img/tri1.png" alt =" " style=" height:10px;width:10px;"><br/>
+                                                                    <a class="upvote">213</a>
+                                                                    </button>
+                                                                 </div>
+                                                             </td>
+                                                         </tr>
+                                                    </table>
+                                                </a>
+                                            </div>
+                                            <div class="product1 left "  style="margin-top:8px;background-color: #fff; margin-right: 20px;">
+                                                    <a class="link1" style="text-decoration: none;" >
+                                                         <table>
+                                                             <tr>
+                                                                 <td><img src= "img/to2.jpeg" alt="Freelancify" style="width:80px;height:80px"></td>
+                                                                 <td> <div class="font_9d927 lineHeight_042f1" style="line-height: 32px; font-size:20px; color: #000000;">Freelancify</div>
+                                                                     <span class="font_9d927 grey_bbe43" style="-webkit-box-flex:1; font-weight:400; font-size:13px; color: #6f6f6f;">Self-Management for freelancers</span><br/><br/>
+                                                                     <div class="subscribertag">
+                                                                        <div class="subsinfo">
+                                                                            <a>
+                                                                               <button style="border: none; margin-left: 20px; background-color: #fff;">
+                                                                                   <img src="img/comment.png" alt ="comment" style="height: 10px; width: 10px;">
+                                                                                   <a>19</a>
+                                                                               </button>
+                                                                                    <span class=" font_9d927" style="-webkit-box-flex:1; font-weight:400; font-size:13px; color: #6f6f6f; padding : 20px;">Productivity</span>
+                                                                                </div>
+                                                                            </a>
+                                                                        </div>
+                                                                        <button  class="upvotebtn font_9d927" onclick="upvote(11)" style="float:right; margin-top:-65px ;margin-left:575px;font-size:13px; height:50px;width:40px;border:none; background-color: #fff;"> 
+                                                                                <img src="img/tri1.png" alt =" " style=" height:10px;width:10px;"><br/>
+                                                                                <a class="upvote">86   </a>
+                                                                        </button>
+                                                                    </div>
+                                                                 </td>
+                                                             </tr>
+                                                        </table>
+                                                    </a>
+                                                </div>
+                                                <div class=" left product1"  style="margin-top:8px;background-color: #fff; margin-right: 20px; height:90px">
+                                                        <a class="link1" style="text-decoration: none;">
+                                                             <table>
+                                                                 <tr>
+                                                                     <td><img src= "img/to3.jpeg" alt="PayRequest" style="width:80px;height:80px"></td>
+                                                                     <td> <div class="font_9d927 lineHeight_042f1" style="line-height: 32px; font-size:20px; color: #000000;"> PayRequest</div>
+                                                                         <span class="font_9d927 grey_bbe43" style="-webkit-box-flex:1; font-weight:400; font-size:13px; color: #6f6f6f;">Simple, fast payment links via Stripe and Mollie</span><br/><br/>
+                                                                         <div class="subscribertag">
+                                                                            <div class="subsinfo">
+                                                                                <a>
+                                                                                   <button style="border: none; margin-left: 20px; background-color: #fff;">
+                                                                                       <img src="img/comment.png" alt ="comment" style="height: 10px; width: 10px;">
+                                                                                       <a>19</a>
+                                                                                   </button>
+                                                                                        <span class=" font_9d927 lineHeight_042f1" style="-webkit-box-flex:1; font-weight:400; font-size:13px; color: #6f6f6f; padding : 20px;">Productivity</span>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </div>
+                                                                            <button  class="upvotebtn font_9d927 lineHeight_042f1" onclick="upvote(12)" style="float:right; margin-top:-65px ;margin-left:575px;font-size:13px; height:50px;width:40px;border:none; background-color: #fff;"> 
+                                                                                    <img src="img/tri1.png" alt =" " style=" height:10px;width:10px;"><br/>
+                                                                                    <a class="upvote">106</a>
+                                                                            </button>
+                                                                            </div>
+                                                                     </td>
+                                                                 </tr>
+                                                            </table>
+                                                        </a>
+                                                    </div>
+                                                    <div class=" left product1"  style="background-color: #fff; margin-right: 20px;height:100px;">
+                                                            <a class="link1" style="text-decoration: none;">
+                                                                 <table>
+                                                                     <tr>
+                                                                         <td><img src= "img/to3.gif" alt="Lemonade" style="width:80px;height:80px;"></td>
+                                                                         <td> <div class="font_9d927 lineHeight_042f1" style="line-height: 32px; font-size:20px; color: #000000;"> Lemonade</div>
+                                                                             <span class="font_9d927 grey_bbe43" style="-webkit-box-flex:1; font-weight:400; font-size:13px; color: #6f6f6f;">Forget everything you know about insurance </span><br/><br/>
+                                                                             <div class="subscribertag">
+                                                                                <div class="subsinfo">
+                                                                                    <a>
+                                                                                       <button style="border: none; margin-left: 20px; background-color: #fff;">
+                                                                                           <img src="img/comment.png" alt ="comment" style="height: 10px; width: 10px;">
+                                                                                           <a>19</a>
+                                                                                       </button>
+                                                                                            <span class=" font_9d927 lineHeight_042f1" style="-webkit-box-flex:1; font-weight:400; font-size:13px; color: #6f6f6f; padding : 20px;">Productivity</span>
+                                                                                        </div>
+                                                                                    </a>
+                                                                                </div>
+                                                                                <button  class=" upvotebtn font_9d927 lineHeight_042f1" onclick="upvote(13)" style="float:right; margin-top:-65px ;margin-left:575px;font-size:13px; height:50px;width:40px;border:none; background-color: #fff;"> 
+                                                                                        <img src="img/tri1.png" alt =" " style=" height:10px;width:10px;"><br/>
+                                                                                        <a class="upvote">106</a>
+                                                                                </button>
+                                                                                </div>
+                                                                         </td>
+                                                                     </tr>
+                                                                </table>
+                                                            </a>
+                                                        </div>
+                                                        <div class="product1 left "  style="background-color: #fff; margin-right: 20px;height:100px;">
+                                                                <a class="link" >
+                                                                     <table>
+                                                                         <tr>
+                                                                             <td><img src= "img/to4.png" alt="Pine" style="width:80px;height:80px;"></td>
+                                                                             <td> <div class="font_9d927 lineHeight_042f1" style="line-height: 32px; font-size:20px; color: #000000;"> Pine</div>
+                                                                                 <span class="font_9d927 grey_bbe43" style="-webkit-box-flex:1; font-weight:400; font-size:13px; color: #6f6f6f;">Your personal journal.Everywhere.</span><br/><br/>
+                                                                                 <div class="subscribertag">
+                                                                                    <div class="subsinfo">
+                                                                                        <a>
+                                                                                           <button style="border: none; margin-left: 20px; background-color: #fff;">
+                                                                                               <img src="img/comment.png" alt ="comment" style="height: 10px; width: 10px;">
+                                                                                               <a>59</a>
+                                                                                           </button>
+                                                                                                <span class=" font_9d927 lineHeight_042f1" style="-webkit-box-flex:1; font-weight:400; font-size:13px; color: #6f6f6f; padding : 20px;">Web App</span>
+                                                                                            </div>
+                                                                                        </a>
+                                                                                    </div>
+                                                                                    <button  class="upvotebtn font_9d927 lineHeight_042f1" onclick="upvote(14)" style="float:right; margin-top:-65px ;margin-left:575px;font-size:13px; height:50px;width:40px;border:none; background-color: #fff;"> 
+                                                                                            <img src="img/tri1.png" alt =" " style=" height:10px;width:10px;"><br/>
+                                                                                            <a class="upvote">309</a>
+                                                                                    </button>
+                                                                                    </div>
+                                                                             </td>
+                                                                         </tr>
+                                                                    </table>
+                                                                </a>
+                                                            </div>
+                                                             
+                                                    <div class="left show ">
+                                                            <span style="margin-left: 300px;">
+                                                                <svg width="12" height="7" viewBox="0 0 12 7">
+                                                                    <path d="M5.998 6.244a.99.99 0 0 1-.703-.292L1.048 1.705A1.003 1.003 0 0 1 1.05.293.996.996 0 0 1 2.462.29L6 3.83 9.538.29a1.003 1.003 0 0 1 1.412.003.997.997 0 0 1 .002 1.412L6.705 5.952a.992.992 0 0 1-.702.29z" fill="#CCC8C7"></path>
+                                                                </svg> <a href="" class="link"> &nbsp&nbsp&nbspShow <!-- -->8<!-- --> more</a>
+                                                            </span>
+                                                    </div>   
+                                                    <div class =" left maincontent  font_9d927" style=" padding: 30px; height: 50px;" >
+                                                        <span style="font-weight: 600; font-size: 20px; margin-left: -25px ;margin-top:-10px;">Sunday</span>                                                       
+                                                </div>
+                                                <div class=" left product1"  style="margin-top:5px;background-color: #fff; margin-right: 20px;">
+                                                        <a class="link" style="text-decoration: none;">
+                                                             <table>
+                                                                 <tr>
+                                                                     <td><img src= "img/to1.jpeg" alt="Biolinky" style="width:80px;height:80px"></td>
+                                                                     <td> <div class="font_9d927 lineHeight_042f1" style="line-height: 32px; font-size:20px; color: #000000;"> BioLinky</div>
+                                                                         <span class="font_9d927 grey_bbe43" style="-webkit-box-flex:1; font-weight:400; font-size:13px; color: #6f6f6f;">Yet another link tool? Yeah.. But better, and totally free!</span><br/><br/>
+                                                                         <div class="subscribertag">
+                                                                             <div class="subsinfo">
+                                                                                 <a>
+                                                                                    <button style="border: none; margin-left: 20px; background-color: #fff;">
+                                                                                        <img src="img/comment.png" alt ="comment" style="height: 10px; width: 10px;">
+                                                                                        <a>19</a>
+                                                                                    </button>
+                                                                                         <span class=" font_9d927" style="-webkit-box-flex:1; font-weight:400; font-size:13px; color: #6f6f6f; padding : 20px;">Productivity</span>
+                                                                                </a>
+                                                                             </div>
+                                                                             <button  class="upvotebtn font_9d927" onclick="upvote(15)" style="float:right; margin-top:-65px ;margin-left:575px;font-size:13px; height:50px;width:40px;border:none; background-color: #fff;"> 
+                                                                            <img src="img/tri1.png" alt =" " style=" height:10px;width:10px;"><br/>
+                                                                            <a class="upvote">213</a>
+                                                                            </button>
+                                                                         </div>
+                                                                     </td>
+                                                                 </tr>
+                                                            </table>
+                                                        </a>
+                                                    </div>
+                                                    <div class="product1 left "  style="margin-top:8px;background-color: #fff; margin-right: 20px;">
+                                                            <a class="link" >
+                                                                 <table>
+                                                                     <tr>
+                                                                         <td><img src= "img/to2.jpeg" alt="Freelancify" style="width:80px;height:80px"></td>
+                                                                         <td> <div class="font_9d927 lineHeight_042f1" style="line-height: 32px; font-size:20px; color: #000000;">Freelancify</div>
+                                                                             <span class="font_9d927 grey_bbe43" style="-webkit-box-flex:1; font-weight:400; font-size:13px; color: #6f6f6f;">Self-Management for freelancers</span><br/><br/>
+                                                                             <div class="subscribertag">
+                                                                                <div class="subsinfo">
+                                                                                    <a>
+                                                                                       <button style="border: none; margin-left: 20px; background-color: #fff;">
+                                                                                           <img src="img/comment.png" alt ="comment" style="height: 10px; width: 10px;">
+                                                                                           <a>19</a>
+                                                                                       </button>
+                                                                                            <span class=" font_9d927" style="-webkit-box-flex:1; font-weight:400; font-size:13px; color: #6f6f6f; padding : 20px;">Productivity</span>
+                                                                                        </div>
+                                                                                    </a>
+                                                                                </div>
+                                                                                <button  class="upvotebtn font_9d927" onclick="upvote(16)" style="float:right; margin-top:-65px ;margin-left:575px;font-size:13px; height:50px;width:40px;border:none; background-color: #fff;"> 
+                                                                                        <img src="img/tri1.png" alt =" " style=" height:10px;width:10px;"><br/>
+                                                                                        <a class="upvote">86   </a>
+                                                                                </button>
+                                                                            </div>
+                                                                         </td>
+                                                                     </tr>
+                                                                </table>
+                                                            </a>
+                                                        </div>
+                                                        <div class=" left product1"  style="margin-top:8px;background-color: #fff; margin-right: 20px; height:90px">
+                                                                <a class="link" >
+                                                                     <table>
+                                                                         <tr>
+                                                                             <td><img src= "img/to3.jpeg" alt="PayRequest" style="width:80px;height:80px"></td>
+                                                                             <td> <div class="font_9d927 lineHeight_042f1" style="line-height: 32px; font-size:20px; color: #000000;"> PayRequest</div>
+                                                                                 <span class="font_9d927 grey_bbe43" style="-webkit-box-flex:1; font-weight:400; font-size:13px; color: #6f6f6f;">Simple, fast payment links via Stripe and Mollie</span><br/><br/>
+                                                                                 <div class="subscribertag">
+                                                                                    <div class="subsinfo">
+                                                                                        <a>
+                                                                                           <button style="border: none; margin-left: 20px; background-color: #fff;">
+                                                                                               <img src="img/comment.png" alt ="comment" style="height: 10px; width: 10px;">
+                                                                                               <a>19</a>
+                                                                                           </button>
+                                                                                                <span class=" font_9d927 lineHeight_042f1" style="-webkit-box-flex:1; font-weight:400; font-size:13px; color: #6f6f6f; padding : 20px;">Productivity</span>
+                                                                                            </div>
+                                                                                        </a>
+                                                                                    </div>
+                                                                                    <button  class=" upvotebtn font_9d927 lineHeight_042f1" onclick="upvote(17)" style="float:right; margin-top:-65px ;margin-left:575px;font-size:13px; height:50px;width:40px;border:none; background-color: #fff;"> 
+                                                                                            <img src="img/tri1.png" alt =" " style=" height:10px;width:10px;"><br/>
+                                                                                            <a class="upvote">106</a>
+                                                                                    </button>
+                                                                                    </div>
+                                                                             </td>
+                                                                         </tr>
+                                                                    </table>
+                                                                </a>
+                                                            </div>
+                                                            <div class=" left product1"  style="background-color: #fff; margin-right: 20px;height:100px;">
+                                                                    <a class="link">
+                                                                         <table>
+                                                                             <tr>
+                                                                                 <td><img src= "img/to3.gif" alt="Lemonade" style="width:80px;height:80px;"></td>
+                                                                                 <td> <div class="font_9d927 lineHeight_042f1" style="line-height: 32px; font-size:20px; color: #000000;"> Lemonade</div>
+                                                                                     <span class="font_9d927 grey_bbe43" style="-webkit-box-flex:1; font-weight:400; font-size:13px; color: #6f6f6f;">Forget everything you know about insurance </span><br/><br/>
+                                                                                     <div class="subscribertag">
+                                                                                        <div class="subsinfo">
+                                                                                            <a>
+                                                                                               <button style="border: none; margin-left: 20px; background-color: #fff;">
+                                                                                                   <img src="img/comment.png" alt ="comment" style="height: 10px; width: 10px;">
+                                                                                                   <a>19</a>
+                                                                                               </button>
+                                                                                                    <span class=" font_9d927 lineHeight_042f1" style="-webkit-box-flex:1; font-weight:400; font-size:13px; color: #6f6f6f; padding : 20px;">Productivity</span>
+                                                                                                </div>
+                                                                                            </a>
+                                                                                        </div>
+                                                                                        <button  class=" upvotebtn font_9d927 lineHeight_042f1" onclick="upvote(18)" style="float:right; margin-top:-65px ;margin-left:575px;font-size:13px; height:50px;width:40px;border:none; background-color: #fff;"> 
+                                                                                                <img src="img/tri1.png" alt =" " style=" height:10px;width:10px;"><br/>
+                                                                                                <a class="upvote">106</a>
+                                                                                        </button>
+                                                                                        </div>
+                                                                                 </td>
+                                                                             </tr>
+                                                                        </table>
+                                                                    </a>
+                                                                </div>
+                                                                <div class="product1 left "  style="background-color: #fff; margin-right: 20px;height:100px;">
+                                                                        <a class="link1" style="text-decoration: none;">
+                                                                             <table>
+                                                                                 <tr>
+                                                                                     <td><img src= "img/to4.png" alt="Pine" style="width:80px;height:80px;"></td>
+                                                                                     <td> <div class="font_9d927 lineHeight_042f1" style="line-height: 32px; font-size:20px; color: #000000;"> Pine</div>
+                                                                                         <span class="font_9d927 grey_bbe43" style="-webkit-box-flex:1; font-weight:400; font-size:13px; color: #6f6f6f;">Your personal journal.Everywhere.</span><br/><br/>
+                                                                                         <div class="subscribertag">
+                                                                                            <div class="subsinfo">
+                                                                                                <a>
+                                                                                                   <button style="border: none; margin-left: 20px; background-color: #fff;">
+                                                                                                       <img src="img/comment.png" alt ="comment" style="height: 10px; width: 10px;">
+                                                                                                       <a>59</a>
+                                                                                                   </button>
+                                                                                                        <span class=" font_9d927 lineHeight_042f1" style="-webkit-box-flex:1; font-weight:400; font-size:13px; color: #6f6f6f; padding : 20px;">Web App</span>
+                                                                                                    </div>
+                                                                                                </a>
+                                                                                            </div>
+                                                                                            <button  class="upvotebtn font_9d927 lineHeight_042f1" onclick="upvote(19)" style="float:right; margin-top:-65px ;margin-left:575px;font-size:13px; height:50px;width:40px;border:none; background-color: #fff;"> 
+                                                                                                    <img src="img/tri1.png" alt =" " style=" height:10px;width:10px;"><br/>
+                                                                                                    <a class="upvote">309</a>
+                                                                                            </button>
+                                                                                            </div>
+                                                                                     </td>
+                                                                                 </tr>
+                                                                            </table>
+                                                                        </a>
+                                                                    </div>
+                                                                     
+                                                            <div class="left " style="background-color: #fff; height:25px;width:705px;padding: 10px 15px 10px 10px;box-sizing:content-box;">
+                                                                    <span style="margin-left: 300px;">
+                                                                        <svg width="12" height="7" viewBox="0 0 12 7">
+                                                                            <path d="M5.998 6.244a.99.99 0 0 1-.703-.292L1.048 1.705A1.003 1.003 0 0 1 1.05.293.996.996 0 0 1 2.462.29L6 3.83 9.538.29a1.003 1.003 0 0 1 1.412.003.997.997 0 0 1 .002 1.412L6.705 5.952a.992.992 0 0 1-.702.29z" fill="#CCC8C7"></path>
+                                                                        </svg> <a href="" class="link"> &nbsp&nbsp&nbspShow <!-- -->8<!-- --> more</a>
+                                                                    </span>
+                                                            </div>           
+
+            </div>
+            <div>
+                <div class="sidecontent font_9d927 right" style="padding: 10px 15px 10px 10px; padding-bottom: 15px;" >
+                        <span style="font-weight: 600; font-size: 17px;">Makers Woring today</span>
+               </div>
+               <div class="gridimg right">
+                       <div>
+                           <img class="imgcontainer" src="img/user1.jpeg" alt="Mandy">
+                       </div>                      
+                       <div>
+                            <img class="imgcontainer" src="img/user2.jpeg" alt="Mandy">
+                       </div>
+                        <div>
+                            <img class="imgcontainer" src="img/user3.jpeg" alt="Mandy">
+                        </div>
+                        <div>
+                            <img class="imgcontainer" src="img/user4.jpeg" alt="Mandy">    
+                        </div>
+                        <div>
+                            <img class="imgcontainer" src="img/user5.jpeg" alt="Mandy">    
+                        </div>
+                        <div>
+                            <img class="imgcontainer" src="img/user6.jpeg" alt="Mandy">    
+                        </div>
+                        <div>
+                            <img class="imgcontainer" src="img/user7.jpeg" alt="Mandy">    
+                        </div>
+                        <div>
+                            <img class="imgcontainer" src="img/user8.jpeg" alt="Mandy">    
+                        </div>
+                        <div>
+                            <img class="imgcontainer" src="img/user9.jpeg" alt="Mandy">    
+                        </div>
+                        <div>
+                            <img class="imgcontainer" src="img/user10.jpeg" alt="Mandy">    
+                        </div>
+                        <div>
+                            <img class="imgcontainer" src="img/user11.jpeg" alt="Mandy">    
+                        </div>
+                        <div>
+                            <img class="imgcontainer" src="img/user12.jpeg" alt="Mandy">    
+                        </div>
+               </div>
+              
+               <div  class = " font_9d927 right" style="margin-top:100px ; background-color: #fff; margin-left:-5px;height:40px;width: 305px; padding:10px">
+                    <a  style="font-size: 11px; color: #cc4d29;text-decoration: none;" href=""><p style="text-align: center;">START WORKING NOW</p></a>
+               </div>
+                <div class="right"style="font-weight: 600; font-size: 17px; margin-top:20px">
+                     <span class="font_9d927" >Product Hunt Radio</span>
+                </div>
+                
+            
+                <div class="right" style="background-color: #fff; height:65px; display: grid; grid-template-columns: 240px 25px;margin-top: 10px;">
+                    <div class=" right bold1 font_9d927" style="font-size:14px; padding:10px 15px 10px 10px"> 
+                        What not to do when marketing your product 
+                    </div>
+                     <div class="right">
+                            <a href="https://www.producthunt.com/radio?play=1&utm_source=Product+Hunt&utm_campaign=homepage"><img src="Radio.png" alt=""> </a>
+                    </div>
+                </div>
+                   
+                
+                <div class="right"style="font-weight: 600; font-size: 17px;width:310px">
+                    <span class="font_9d927" >Story of the week</span>
+                </div>
+                  
+                    <div class= " right "style=" margin-top:20px;font-weight: 600; font-size: 14px; background-color: #fff;width:330px;box-sizing: border-box;height: 180px; line-height: 1.5; padding:10px 15px 10px 10px;">
+                        <img src="img/story.jpeg" alt="" style="margin-left:-10px;margin-top: -10px;">
+                            <span class="font_9d927"> How To Build An Organic Marketing Engine-- 4 Lessons From Spotify Wrapped</span><br>
+                            <span class="font_9d927" style="font-weight: 250;color: #6f6f6f; font-size: small;position: absolute;"> By Sarah McBride</span>
+                    </div>
+                   
+                    <div  class = " right font_9d927" style="margin-top:5px ; background-color: #fff; margin-right:20px; height:30px;width: 320px; padding:5px">
+                            <a  style="font-size: 11px; color: #cc4d29;text-decoration: none;" href=""><p style="text-align: center;">READ MORE STORIES</p></a>
+                       </div>
+                   
+                        <div class="right" style="margin-top:20px;font-weight: 600; font-size: 17px">
+                                <span class="font_9d927" >Hiring Now</span>
+                        </div>
+                       
+                            <div  class=" right font_9d927"  style="background-color: #fff; margin-top: 10px; padding: 25px 20px 15px 15px;">
+                                <div style="display:grid; grid-template-columns: 240px auto; ">
+                                <div>
+                                    <span style="font-weight:600; font-size:13px; margin-top:-5px; position: absolute;">Notion</span><br/>
+                                    <span style="font-size:small;color: #6f6f6f; line-height: 1.5;">The all-in-one workspace for notes, tasks, wikis, & databases</span></div>
+                                <div style="margin-top:5px;"><img src="img/notion.jpeg" alt="" ></div>
+                                <div style="margin-top:20px ; padding-top:10px">
+                                        <span style="font-weight:600; font-size:13px; ; position: absolute;">Catch</span><br/>
+                                        <span style="font-size:small;color: #6f6f6f; line-height: 1.5;">The future of work looks different. Benefits should too. YC'19</span>
+                                </div>
+                                <div>
+
+                                </div>
+                                <div style="margin-top:20px ; padding-top:10px">
+                                        <span style="font-weight:600; font-size:13px; ; position: absolute;">Pickyourtrail</span><br/>
+                                        <span style="font-size:small;color: #6f6f6f; line-height: 1.5;">Unwrap the world with Pickyourtrail. Create, Customize and Book trips, completely online.</span>
+                                </div>
+                                <div>
+
+                                </div>
+                                <div style="margin-top:20px ; padding-top:10px">
+                                        <span style="font-weight:600; font-size:13px; ; position: absolute;">Wonderschool</span><br/>
+                                        <span style="font-size:small;color: #6f6f6f; line-height: 1.5;">The all-in-one workspace for notes, tasks, wikis, & databases</span>
+                                </div>
+                            </div>
+                            <div  class ="font_9d927" style=" margin-top:15px ; padding:10px 15px 10px 10px;font-size: 13px;font-weight: 550; ">
+                                <button class="button1 " style="padding:10px 15px 10px 15px;font-weight:550;font-size:11px;height:30px;width:250px;color: #cc4d29;"> VIEW ALL JOBS</button><br/><br/>
+                                <span >Hiring?<a  href ="" style="color:#cc4d29 ;text-decoration: none;"> Post a job </a></span>
+                            </div>
+                            </div>
+                          
+                                <div class= "right "style="margin-top:10px;padding:10px 15px 10px 10px;font-weight: 600; font-size: 17px">
+                                        <span class="font_9d927" >Top discussions</span>
+                                </div>
+                               
+                                    <div class= " right "style="padding: 10px 15px 10px 10px; background-color: #fff;">
+                                    <div  class=" font_9d927"style="display:grid; grid-template-columns: 240px auto;padding: 10px 15px 10px 10px; ">
+                                            <div style="padding: 10px 15px 10px 10px;">
+                                                <span class="link"style="font-weight:600; font-size:14px; margin-top:-5px;">What sounds make/help  you  fall  asleep  fast? 🎶😴 </span><br/>
+                                                <div style="padding: 10px 15px 10px 10px;"> 
+                                                    <a href="" class="num font_9d927 link"><img src="img/tri1.png" alt =" " style=" height:10px;width:10px;">7</a>  
+                                                    <a href="" class="num font_9d927 link"><img src="img/comment.png" alt ="comment" style="height: 10px; width: 10px; margin-left: 20px;">7</a>
+                                                    <a href="" class="font_9d927 num link" style="margin-left:10px"> Join discussion</a>
+                                                </div>
+                                            </div>
+                                            <div style="margin-top:5px;"><img src="user1.jpeg" alt="" style=" border-radius: 50%; height: 38px; width:38px;" ></div>
+                                            <div style="padding: 10px 15px 10px 10px;">
+                                                    <span class="link"style="font-weight:600; font-size:14px; margin-top:-5px;">Do you think Steve Jobs would be happy with what Apple is doing now? 🤔 </span><br/>
+                                                    <div style="padding: 10px 15px 10px 10px;"> 
+                                                        <a href="" class="num font_9d927 link"><img src="img/tri1.png" alt =" " style=" height:10px;width:10px;">22</a>  
+                                                        <a href="" class="num font_9d927 link"><img src="img/comment.png" alt ="comment" style="height: 10px; width: 10px; margin-left: 20px;">22</a>
+                                                        <a href="" class="font_9d927 num link" style="margin-left:10px"> Join discussion</a>
+                                                    </div>
+                                                </div>
+                                                <div style="margin-top:5px;"><img src="user2.jpeg" alt="" style=" border-radius: 50%; height: 38px; width:38px;" ></div>
+                                                                                       <div style="padding: 10px 15px 10px 10px;">
+                                                <span class="link"style="font-weight:600; font-size:14px; margin-top:-5px;">What is the best Markdown editor for Mac? </span><br/>
+                                                <div style="padding: 10px 15px 10px 10px;"> 
+                                                    <a href="" class="num font_9d927 link"><img src="img/tri1.png" alt =" " style=" height:10px;width:10px;">7</a>  
+                                                    <a href="" class="num font_9d927 link"><img src="img/comment.png" alt ="comment" style="height: 10px; width: 10px; margin-left: 20px;">7</a>
+                                                    <a href="" class="font_9d927 num link" style="margin-left:10px"> Join discussion</a>
+                                                </div>
+                                            </div>
+                                            <div style="margin-top:5px;"><img src="user3.jpeg" alt="" style=" border-radius: 50%; height: 38px; width:38px;" ></div>
+                                            <div style="padding: 10px 15px 10px 10px;">
+                                                    <span class="link"style="font-weight:600; font-size:14px; margin-top:-5px;">How do you stay productive when something bad happens?</span><br/>
+                                                    <div style="padding: 10px 15px 10px 10px;"> 
+                                                        <a href="" class="num font_9d927 link"><img src="img/tri1.png" alt =" " style=" height:10px;width:10px;">7</a>  
+                                                        <a href="" class="num font_9d927 link"><img src="img/comment.png" alt ="comment" style="height: 10px; width: 10px; margin-left: 20px;">7</a>
+                                                        <a href="" class="font_9d927 num link" style="margin-left:10px"> Join discussion</a>
+                                                    </div>
+                                                </div>
+                                                <div style="margin-top:5px;"><img src="user4.jpeg" alt="" style=" border-radius: 50%; height: 38px; width:38px;" ></div>
+                                                <div style="padding: 10px 15px 10px 10px;">
+                                                        <span class="link"style="font-weight:600; font-size:13px; margin-top:-5px;">Has anyone used Superhuman's Product-Market fit engine? </span><br/>
+                                                        <div style="padding: 10px 15px 10px 10px;"> 
+                                                            <a href="" class="num font_9d927 link"><img src="img/tri1.png" alt =" " style=" height:10px;width:10px;">7</a>  
+                                                            <a href="" class="num font_9d927 link"><img src="img/comment.png" alt ="comment" style="height: 10px; width: 10px; margin-left: 20px;">7</a>
+                                                            <a href="" class="font_9d927 num link" style="margin-left:10px"> Join discussion</a>
+                                                        </div>
+                                                    </div>
+                                                    <div style="margin-top:5px;"><img src="user5.jpeg" alt="" style=" border-radius: 50%; height: 38px; width:38px;" ></div>
+                                                
+                                                            <button class="button1 link" style="padding:10px 15px 10px 15px;height:30px;width:250px;color: #cc4d29;"> VIEW MORE DISCUSSIONS</button><br/><br/>
+                                                    
+                                        </div>
+                                    </div>    
+                                    <div class =" right font_9d927 found">
+                                            <span>Founder Club
+                                                <span id="new">NEW</span>
+                                            </span>
+                                   </div>
+                                   <div>
+
+                                   </div>
+                                   <div class="font_9d927 right foottxt" >
+                                    <div><img src="img/foot.png" align="right" style="height:80px;width:80px;">
+                                        <span>Kickstart your startup</span><br>
+                                        <span  style="font-size: 13px;">Access to potentially >$100k worth of savings on tools and services for just $60/mo </span>
+                                    </div>
+                                   </div>
+
+            </div>  
+            </div>
+                
+        </div>
+
+
+        <div class=" footer"> 
+                <img src="img/comment1.png" align="right">
+        </div>
+    </body>
+</html>
